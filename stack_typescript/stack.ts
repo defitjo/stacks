@@ -18,15 +18,15 @@ class Stack {
   }
 
   push(data: any): void {
-    if (data === null) {
-      throw Error("data cannot be null");
+    if (data === null || data === undefined) {
+      throw new Error("data cannot be null");
     }
     this.items.push(data);
   }
 
   pop(): any {
     if (this.isEmpty()) {
-      throw Error("stack is empty");
+      throw new Error("stack is empty");
     }
     return this.items.pop();
   }

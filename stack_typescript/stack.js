@@ -16,14 +16,14 @@ var Stack = /** @class */ (function () {
     return this.items.length === 0;
   };
   Stack.prototype.push = function (data) {
-    if (data === null) {
-      throw Error("data cannot be null");
+    if (data === null || data === undefined) {
+      throw new Error("data cannot be null");
     }
     this.items.push(data);
   };
   Stack.prototype.pop = function () {
     if (this.isEmpty()) {
-      throw Error("stack is empty");
+      throw new Error("stack is empty");
     }
     return this.items.pop();
   };
